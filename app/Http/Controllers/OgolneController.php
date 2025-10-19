@@ -18,7 +18,9 @@ class OgolneController extends Controller
         'Zadanie 2',
         'Zadanie 3'
         ];
-        $tasks= [];
+        $tasks= [
+            // 'Task 1'
+        ];
         //return view('onas', ['zadania' => $zadania]);
         //return view('onas')->with('zadania', $zadania);
         return view('ogolne.onas', compact('zadania', 'tasks'));
