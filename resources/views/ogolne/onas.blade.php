@@ -19,5 +19,17 @@
             </ol>
 
         @endisset
+        @isset($tasks)
+        <ol>
+            @forelse ($tasks as $task)
+                <li>
+                   {{$task}} 
+                </li>
+            @empty
+                <li>brak danych</li>
+            @endforelse
+        </ol>
+            
+        @endisset
     </div>
 @endsection
