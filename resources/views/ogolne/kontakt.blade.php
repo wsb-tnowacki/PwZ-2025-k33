@@ -6,4 +6,10 @@
         Treść strony kontaktowej <br>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates molestiae quidem ut unde adipisci quos nihil officia, vero accusantium itaque odit, temporibus quas tempora veritatis vel dolor praesentium, rerum molestias.
     </div>
+    @auth
+        <div>Dla zalogowanych</div>
+    @endauth
+    @guest
+        <div>Dla niezalogowanych</div>
+    @endguest
 @endsection

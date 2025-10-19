@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OgolneController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,8 @@ Route::controller(OgolneController::class)->group(function ()
     Route::get('/kontakt', 'kontakt')->name('ogolne.kontakt');
     Route::get('/o-nas', 'onas')->name('ogolne.onas');
 });
+
+Route::resource('post', PostController::class);
 
 /* Route::get('/', function () {
     return view('welcome');
