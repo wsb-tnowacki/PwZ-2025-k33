@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.lista');
+        $posty = Post::all();
+        return view('post.lista', compact('posty'));
     }
 
     /**
@@ -28,7 +29,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //@dump($request);
+        /* $post = new Post();
+        $post->tytul = request('tytul');
+        $post->autor = $request['autor'];
+        $post->email = request('email');
+        $post->tresc = request('tresc');
+        $post->save(); */
+        Post::create($request->all());
+        return redirect(route('post.index'));
     }
 
     /**

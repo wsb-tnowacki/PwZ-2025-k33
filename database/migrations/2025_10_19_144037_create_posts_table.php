@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('posty', function (Blueprint $table) {
             $table->id();
+            $table->string('tytul', 200);
+            $table->string('autor', 100);
+            $table->string('email', 200);
+            $table->text('tresc');
             $table->timestamps();
         });
     }
