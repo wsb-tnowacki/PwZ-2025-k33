@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -32,7 +33,7 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         //@dump($request);
         /* $post = new Post();
@@ -41,8 +42,20 @@ class PostController extends Controller
         $post->email = request('email');
         $post->tresc = request('tresc');
         $post->save(); */
+        /* $request->validate(
+            [
+                'tytul' => 'required|min:5|max:200',
+                'autor' => [
+                    'required',
+                    'min:3',
+                    'max:100',
+                ],
+                'email' => 'required|email:rfc,dns|max:200',
+                'tresc' => 'required|min:5',
+            ]
+        ); */
         Post::create($request->all());
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message',"Dodano poprawnie post");
     }
 
     /**
@@ -65,11 +78,11 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
         //return "update id: $post->id";
         $post->update($request->all());
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message',"Zmieniono poprawnie post");
     }
 
     /**
@@ -79,6 +92,6 @@ class PostController extends Controller
     {
         //return "destroy id: $post->id";
         $post->delete();
-        return redirect(route('post.index'));
+        return redirect(route('post.index'))->with('message',"Usunięto poprawnie post")->with('color', 'red');
     }
 }
