@@ -28,6 +28,7 @@
         <a href="{{route('post.index')}}" >
             <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Powrót do listy</button>
         </a>
+        @auth
         <a href="{{route('post.edit', $post->id)}}" >
             <button type="button" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Edytuj post</button>
         </a>
@@ -35,7 +36,9 @@
             @method('DELETE')
             @csrf
             <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline">Usuń post</button>
-        </form>        
+        </form>     
+        @endauth
+               
     </div>    
 @endisset
 @endsection
