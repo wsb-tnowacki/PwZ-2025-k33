@@ -62,7 +62,9 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        return "update id: $post->id";
+        //return "update id: $post->id";
+        $post->update($request->all());
+        return redirect(route('post.index'));
     }
 
     /**
@@ -70,6 +72,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        //return "destroy id: $post->id";
+        $post->delete();
+        return redirect(route('post.index'));
     }
 }
