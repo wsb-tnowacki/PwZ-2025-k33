@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('post.post',compact('post'));
     }
 
     /**
@@ -53,7 +53,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        //return "edit id: $post->id";
+        return view('post.edytuj',compact('post'));
     }
 
     /**
@@ -61,7 +62,7 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        return "update id: $post->id";
     }
 
     /**
