@@ -9,11 +9,15 @@
     </div>
     <div class="mb-2">
         <label for="autor" class="block text-gray-700 font-bold mb-2">Autor</label>
-        <input type="text" name="autor" id="autor" placeholder="Podaj autora postu" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{$post->autor}}" required disabled>
+        <div id="autor" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+            {{$post->user->name}}
+        </div>
     </div>
     <div class="mb-2">
         <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-        <input type="email" name="email" id="email" placeholder="Podaj email autora postu" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{$post->email}}" required disabled>
+        <div id="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+            {{$post->user->email}}
+        </div>
     </div>
     <div class="mb-2">
         <label for="data" class="block text-gray-700 font-bold mb-2">Daty:</label>

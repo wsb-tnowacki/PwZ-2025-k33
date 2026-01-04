@@ -23,12 +23,12 @@ class PostRequest extends FormRequest
     {
         return [
             'tytul' => 'required|min:5|max:200',
-                'autor' => [
+/*                 'autor' => [
                     'required',
                     'min:3',
                     'max:100',
                 ],
-                'email' => 'required|email:rfc,dns|max:200',
+                'email' => 'required|email:rfc,dns|max:200', */
                 'tresc' => 'required|min:5',
         ];
     }

@@ -14,20 +14,6 @@
         @enderror
     </div>
     <div class="mb-2">
-        <label for="autor" class="block text-gray-700 font-bold mb-2">Autor</label>
-        <input type="text" name="autor" id="autor" placeholder="Podaj autora postu" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="@if(old('autor') !== null){{old('autor')}}@else{{$post->autor}}@endif" required >
-        @error('autor')
-            <div class="text-red-400">{{$message}} </div>
-        @enderror
-    </div>
-    <div class="mb-2">
-        <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
-        <input type="email" name="email" id="email" placeholder="Podaj email autora postu" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="@if(old('email') !== null){{old('email')}}@else{{$post->email}}@endif" required >
-        @error('email')
-            <div class="text-red-400">{{$message}} </div>
-        @enderror
-    </div>
-    <div class="mb-2">
         <label for="tresc" class="block text-gray-700 font-bold mb-2">Treść</label>
         <textarea name="tresc" id="tresc" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required >@if(old('tresc') !== null){{old('tresc')}}@else{{$post->tresc}}@endif</textarea>
         @error('tresc')
