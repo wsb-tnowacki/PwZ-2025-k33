@@ -17,7 +17,7 @@
     </div>
     <div class="mb-2">
         <label for="data" class="block text-gray-700 font-bold mb-2">Daty:</label>
-        <div class=" appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">Data utworzenia: <b>{{$post->created_at->setTimezone('Europe/Warsaw')->format('j F Y H:i:s')}}</b> <br>Data edycji: <b>{{$post->updated_at->setTimezone('Europe/Warsaw')->format('j F Y H:i:s')}}</div>
+        <div class=" appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline">Data utworzenia: <b>{{$post->created_at->locale('pl')->setTimezone('Europe/Warsaw')->translatedFormat('j F Y H:i:s')}}</b> <br>Data edycji: <b>{{$post->updated_at->locale('pl')->setTimezone('Europe/Warsaw')->translatedFormat('j F Y H:i:s')}}</div>
     </div>
     <div class="mb-2">
         <label for="tresc" class="block text-gray-700 font-bold mb-2">Treść</label>
